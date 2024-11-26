@@ -25,15 +25,24 @@ const ImageComponent = () => {
 
 
   return (
-    <div>
-        <div>
+    <div className='container'>
+        <h1>ESCOLHA UMA DATA</h1>
         <input type='date' className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
+
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <img src={apiData.url} className="img-fluid" alt="Imagem da NASA" />
+                </div>
+                <div className="col-md-6">
+                    <div className="card-body">
+                        <h5 className="card-title">{apiData.title}</h5>
+                        <p className="card-text">{apiData.explanation}</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-        <img src={apiData.url} alt="" />
-        <h5 className="">{apiData.title}</h5>
-        <p className="">{apiData.explanation}</p>
     </div>
   )
 }
