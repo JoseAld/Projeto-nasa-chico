@@ -29,20 +29,20 @@ const ImageComponent = () => {
 
   return (
     <div className='container'>
-        <h1>ESCOLHA UMA DATA</h1>
+        <h1 className='text-center'>ESCOLHA UMA DATA</h1>
         <input type='date' className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
-
+        <hr />
         {carregar ? (
             <p className='text-center'>Carregando...</p>
         ) :apiData && (
-            <div className="container">
+            <div className="card">
             <div className="row">
                 <div className="col-md-6">
                     <img src={apiData.url} className="img-fluid" alt="Imagem da NASA" />
                 </div>
                 <div className="col-md-6">
                     <div className="card-body">
-                         <h5 className="card-title">{apiData.title}</h5>
+                        <h2 className="card-title">{apiData.title}</h2>
                         <p className="card-text">{apiData.explanation}</p>
                     </div>
                 </div>
