@@ -24,8 +24,8 @@ const ImageComponent = () => {
   return (
     <div>
         <img src={apiData.url} alt="" />
-        <h5 className="">{imageData.title}</h5>
-        <p className="">{imageData.explanation}</p>
+        <h5 className="">{apiData.title}</h5>
+        <p className="">{apiData.explanation}</p>
     </div>
   )
 }
@@ -34,7 +34,7 @@ export default ImageComponent
 
 
 /**
- * Nome do arquivo: App.jsx
+ * Nome do arquivo: ImageComponent.jsx
  * Data de criação: 26/11/2024
  * Autor: José Aldenir Almeida Gomes Filho
  * Matrícula: 01697549
