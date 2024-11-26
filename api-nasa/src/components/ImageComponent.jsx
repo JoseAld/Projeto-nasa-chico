@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const ImageComponent = () => {
     const [apiData, setApiData] = useState(null);
+    const [date, setDate] = useState('2024-11-26'); 
+
 
 
     useEffect(() => {
         const fetchImage = async () => {
-            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=O42i4uno6c2kebzqhLBIF3cD7Ld2q4wtrc8gWgy8`)
+            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=O42i4uno6c2kebzqhLBIF3cD7Ld2q4wtrc8gWgy8&date=${date}`)
             const data = await response.json();
             console.log(data)
             setApiData(data);
         };
 
         fetchImage();
-    },);
+    },[date]);
 
 
 
@@ -23,9 +26,14 @@ const ImageComponent = () => {
 
   return (
     <div>
+        <div>
+        <input type='date' className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
+        </div>
+
+
         <img src={apiData.url} alt="" />
-        <h5 className="">{imageData.title}</h5>
-        <p className="">{imageData.explanation}</p>
+        <h5 className="">{apiData.title}</h5>
+        <p className="">{apiData.explanation}</p>
     </div>
   )
 }
@@ -34,7 +42,7 @@ export default ImageComponent
 
 
 /**
- * Nome do arquivo: App.jsx
+ * Nome do arquivo: ImageComponent.jsx
  * Data de criação: 26/11/2024
  * Autor: José Aldenir Almeida Gomes Filho
  * Matrícula: 01697549
