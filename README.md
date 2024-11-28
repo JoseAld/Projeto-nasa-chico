@@ -16,6 +16,7 @@ para ver a imagem planetaria no dia com base na data que o usuario escolher.
 
 **responsividade:**
 * telas grandes :
+* 
   ![Captura de tela de 2024-11-26 11-13-33](https://github.com/user-attachments/assets/a3e192a2-bbf6-404e-b9c1-00695e8e8eab)
 
 * telas pequenas (celular) :
